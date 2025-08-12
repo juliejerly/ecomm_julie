@@ -23,6 +23,8 @@ jobs:
           pip install -r requirements.txt
           playwright install
 
-      - name: Run tests
+      - name: Run tests in headed mode
+        env:
+          PWDEBUG: 1
         run: |
-          pytest tests/
+          pytest -v tests/
